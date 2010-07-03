@@ -1,67 +1,48 @@
 // !$*UTF8*$!
 {
+	0353DEAF11DF535B0083E773 /* TwitterPostViewController.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1619, 6239}}";
+			sepNavSelRange = "{1175, 0}";
+			sepNavVisRange = "{1023, 441}";
+		};
+	};
 	0353DEBD11DF535B0083E773 /* MGTwitterLibXMLParser.h */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1412, 816}}";
-			sepNavSelRange = "{178, 0}";
+			sepNavSelRange = "{245, 0}";
 			sepNavVisRange = "{0, 1347}";
 		};
 	};
-	0353DF0A11DF53700083E773 /* PBXBookmark */ = {
-		isa = PBXBookmark;
-		fRef = 0353DEDF11DF535B0083E773 /* TweetThatTune-Info.plist */;
-	};
-	0353DF0B11DF53700083E773 /* PlistBookmark */ = {
-		isa = PlistBookmark;
-		fRef = 0353DEDF11DF535B0083E773 /* TweetThatTune-Info.plist */;
-		fallbackIsa = PBXBookmark;
-		isK = 0;
-		kPath = (
-		);
-		name = "/Volumes/Work/Code/iPhone/TweetThatTune/TweetThatTune-Info.plist";
-		rLen = 0;
-		rLoc = 9223372036854775807;
-	};
-	0353DF4D11DF53AC0083E773 /* PlistBookmark */ = {
-		isa = PlistBookmark;
-		fRef = 0353DEDF11DF535B0083E773 /* TweetThatTune-Info.plist */;
-		fallbackIsa = PBXBookmark;
-		isK = 0;
-		kPath = (
-		);
-		name = "/Volumes/Work/Code/iPhone/TweetThatTune/TweetThatTune-Info.plist";
-		rLen = 0;
-		rLoc = 9223372036854775807;
-	};
-	0353DF8E11DF543B0083E773 /* PlistBookmark */ = {
-		isa = PlistBookmark;
-		fRef = 0353DEDF11DF535B0083E773 /* TweetThatTune-Info.plist */;
-		fallbackIsa = PBXBookmark;
-		isK = 0;
-		kPath = (
-		);
-		name = "/Volumes/Work/Code/iPhone/TweetThatTune/TweetThatTune-Info.plist";
-		rLen = 0;
-		rLoc = 9223372036854775807;
-	};
-	0353DF8F11DF543B0083E773 /* XCBuildMessageTextBookmark */ = {
-		isa = PBXTextBookmark;
-		comments = "Libxml/xmlreader.h: No such file or directory";
-		fRef = 0353DEBD11DF535B0083E773 /* MGTwitterLibXMLParser.h */;
-		fallbackIsa = XCBuildMessageTextBookmark;
-		rLen = 1;
-		rLoc = 9;
-		rType = 1;
-	};
-	0353DF9011DF543B0083E773 /* PBXTextBookmark */ = {
+	0353DF9311DF54840083E773 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = 0353DEBD11DF535B0083E773 /* MGTwitterLibXMLParser.h */;
-		name = "MGTwitterLibXMLParser.h: 10";
+		name = "MGTwitterLibXMLParser.h: 13";
 		rLen = 0;
-		rLoc = 178;
+		rLoc = 245;
 		rType = 0;
 		vrLen = 1347;
 		vrLoc = 0;
+	};
+	0353DFA411DF55780083E773 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 0353DEAF11DF535B0083E773 /* TwitterPostViewController.m */;
+		name = "TwitterPostViewController.m: 42";
+		rLen = 0;
+		rLoc = 1175;
+		rType = 0;
+		vrLen = 1199;
+		vrLoc = 519;
+	};
+	0353DFA911DF55CF0083E773 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 0353DEAF11DF535B0083E773 /* TwitterPostViewController.m */;
+		name = "TwitterPostViewController.m: 42";
+		rLen = 0;
+		rLoc = 1175;
+		rType = 0;
+		vrLen = 1150;
+		vrLoc = 519;
 	};
 	038997D911DF530800537251 /* TweetThatTune */ = {
 		isa = PBXExecutable;
@@ -79,6 +60,7 @@
 		dataTipSortType = 0;
 		debuggerPlugin = GDBDebugging;
 		disassemblyDisplayState = 0;
+		dylibVariantSuffix = "";
 		enableDebugStr = 1;
 		environmentEntries = (
 		);
@@ -86,6 +68,8 @@
 		executableUserSymbolLevel = 0;
 		libgmallocEnabled = 0;
 		name = TweetThatTune;
+		savedGlobals = {
+		};
 		showTypeColumn = 0;
 		sourceDirectories = (
 		);
@@ -171,12 +155,9 @@
 			PBXWorkspaceStateSaveDate = 299848497;
 		};
 		perUserProjectItems = {
-			0353DF0A11DF53700083E773 /* PBXBookmark */ = 0353DF0A11DF53700083E773 /* PBXBookmark */;
-			0353DF0B11DF53700083E773 /* PlistBookmark */ = 0353DF0B11DF53700083E773 /* PlistBookmark */;
-			0353DF4D11DF53AC0083E773 /* PlistBookmark */ = 0353DF4D11DF53AC0083E773 /* PlistBookmark */;
-			0353DF8E11DF543B0083E773 /* PlistBookmark */ = 0353DF8E11DF543B0083E773 /* PlistBookmark */;
-			0353DF8F11DF543B0083E773 /* XCBuildMessageTextBookmark */ = 0353DF8F11DF543B0083E773 /* XCBuildMessageTextBookmark */;
-			0353DF9011DF543B0083E773 /* PBXTextBookmark */ = 0353DF9011DF543B0083E773 /* PBXTextBookmark */;
+			0353DF9311DF54840083E773 /* PBXTextBookmark */ = 0353DF9311DF54840083E773 /* PBXTextBookmark */;
+			0353DFA411DF55780083E773 /* PBXTextBookmark */ = 0353DFA411DF55780083E773 /* PBXTextBookmark */;
+			0353DFA911DF55CF0083E773 /* PBXTextBookmark */ = 0353DFA911DF55CF0083E773 /* PBXTextBookmark */;
 		};
 		sourceControlManager = 038997EA11DF530D00537251 /* Source Control */;
 		userBuildSettings = {
