@@ -104,13 +104,13 @@
 	[window addSubview:splashView];  
 	[window bringSubviewToFront:splashView];  
 	[UIView beginAnimations:nil context:nil];  
-	[UIView setAnimationDuration:1.5];  
+	[UIView setAnimationDuration:0.5];  
 	[UIView setAnimationTransition:UIViewAnimationTransitionNone forView:window cache:YES];  
 	[UIView setAnimationDelegate:self];   
 	[UIView setAnimationDidStopSelector:@selector(startupAnimationDone:finished:context:)];  
 	splashView.alpha = 0.0;  
 	splashView.frame = CGRectMake(-60, -85, 440, 635);  
-	[UIView commitAnimations];  
+	[UIView commitAnimations]; 
 	
 }
 

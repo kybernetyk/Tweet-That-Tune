@@ -1,0 +1,185 @@
+// !$*UTF8*$!
+{
+	0353DEBD11DF535B0083E773 /* MGTwitterLibXMLParser.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1412, 816}}";
+			sepNavSelRange = "{178, 0}";
+			sepNavVisRange = "{0, 1347}";
+		};
+	};
+	0353DF0A11DF53700083E773 /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = 0353DEDF11DF535B0083E773 /* TweetThatTune-Info.plist */;
+	};
+	0353DF0B11DF53700083E773 /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 0353DEDF11DF535B0083E773 /* TweetThatTune-Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+		);
+		name = "/Volumes/Work/Code/iPhone/TweetThatTune/TweetThatTune-Info.plist";
+		rLen = 0;
+		rLoc = 9223372036854775807;
+	};
+	0353DF4D11DF53AC0083E773 /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 0353DEDF11DF535B0083E773 /* TweetThatTune-Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+		);
+		name = "/Volumes/Work/Code/iPhone/TweetThatTune/TweetThatTune-Info.plist";
+		rLen = 0;
+		rLoc = 9223372036854775807;
+	};
+	0353DF8E11DF543B0083E773 /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 0353DEDF11DF535B0083E773 /* TweetThatTune-Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+		);
+		name = "/Volumes/Work/Code/iPhone/TweetThatTune/TweetThatTune-Info.plist";
+		rLen = 0;
+		rLoc = 9223372036854775807;
+	};
+	0353DF8F11DF543B0083E773 /* XCBuildMessageTextBookmark */ = {
+		isa = PBXTextBookmark;
+		comments = "Libxml/xmlreader.h: No such file or directory";
+		fRef = 0353DEBD11DF535B0083E773 /* MGTwitterLibXMLParser.h */;
+		fallbackIsa = XCBuildMessageTextBookmark;
+		rLen = 1;
+		rLoc = 9;
+		rType = 1;
+	};
+	0353DF9011DF543B0083E773 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 0353DEBD11DF535B0083E773 /* MGTwitterLibXMLParser.h */;
+		name = "MGTwitterLibXMLParser.h: 10";
+		rLen = 0;
+		rLoc = 178;
+		rType = 0;
+		vrLen = 1347;
+		vrLoc = 0;
+	};
+	038997D911DF530800537251 /* TweetThatTune */ = {
+		isa = PBXExecutable;
+		activeArgIndices = (
+		);
+		argumentStrings = (
+		);
+		autoAttachOnCrash = 1;
+		breakpointsEnabled = 0;
+		configStateDict = {
+		};
+		customDataFormattersEnabled = 1;
+		dataTipCustomDataFormattersEnabled = 1;
+		dataTipShowTypeColumn = 1;
+		dataTipSortType = 0;
+		debuggerPlugin = GDBDebugging;
+		disassemblyDisplayState = 0;
+		enableDebugStr = 1;
+		environmentEntries = (
+		);
+		executableSystemSymbolLevel = 0;
+		executableUserSymbolLevel = 0;
+		libgmallocEnabled = 0;
+		name = TweetThatTune;
+		showTypeColumn = 0;
+		sourceDirectories = (
+		);
+	};
+	038997EA11DF530D00537251 /* Source Control */ = {
+		isa = PBXSourceControlManager;
+		fallbackIsa = XCSourceControlManager;
+		isSCMEnabled = 0;
+		scmConfiguration = {
+			repositoryNamesForRoots = {
+				"" = "";
+			};
+		};
+	};
+	038997EB11DF530D00537251 /* Code sense */ = {
+		isa = PBXCodeSenseManager;
+		indexTemplatePath = "";
+	};
+	1D6058900D05DD3D006BFB54 /* TweetThatTune */ = {
+		activeExec = 0;
+		executables = (
+			038997D911DF530800537251 /* TweetThatTune */,
+		);
+	};
+	29B97313FDCFA39411CA2CEA /* Project object */ = {
+		activeBuildConfigurationName = Distribution;
+		activeExecutable = 038997D911DF530800537251 /* TweetThatTune */;
+		activeSDKPreference = iphoneos4.0;
+		activeTarget = 1D6058900D05DD3D006BFB54 /* TweetThatTune */;
+		addToTargets = (
+			1D6058900D05DD3D006BFB54 /* TweetThatTune */,
+		);
+		codeSenseManager = 038997EB11DF530D00537251 /* Code sense */;
+		executables = (
+			038997D911DF530800537251 /* TweetThatTune */,
+		);
+		perUserDictionary = {
+			PBXConfiguration.PBXFileTableDataSource3.PBXFileTableDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					1234,
+					20,
+					48,
+					43,
+					43,
+					20,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+					PBXFileDataSource_Target_ColumnID,
+				);
+			};
+			PBXConfiguration.PBXTargetDataSource.PBXTargetDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					1194,
+					60,
+					20,
+					48.16259765625,
+					43,
+					43,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXTargetDataSource_PrimaryAttribute,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+				);
+			};
+			PBXPerProjectTemplateStateSaveDate = 299848497;
+			PBXWorkspaceStateSaveDate = 299848497;
+		};
+		perUserProjectItems = {
+			0353DF0A11DF53700083E773 /* PBXBookmark */ = 0353DF0A11DF53700083E773 /* PBXBookmark */;
+			0353DF0B11DF53700083E773 /* PlistBookmark */ = 0353DF0B11DF53700083E773 /* PlistBookmark */;
+			0353DF4D11DF53AC0083E773 /* PlistBookmark */ = 0353DF4D11DF53AC0083E773 /* PlistBookmark */;
+			0353DF8E11DF543B0083E773 /* PlistBookmark */ = 0353DF8E11DF543B0083E773 /* PlistBookmark */;
+			0353DF8F11DF543B0083E773 /* XCBuildMessageTextBookmark */ = 0353DF8F11DF543B0083E773 /* XCBuildMessageTextBookmark */;
+			0353DF9011DF543B0083E773 /* PBXTextBookmark */ = 0353DF9011DF543B0083E773 /* PBXTextBookmark */;
+		};
+		sourceControlManager = 038997EA11DF530D00537251 /* Source Control */;
+		userBuildSettings = {
+		};
+	};
+}

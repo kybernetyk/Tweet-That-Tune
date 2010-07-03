@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "MGTwitterEngine.h"
+#import <iAd/iAd.h>
 
 @interface TwitterPostViewController : UIViewController 
 {
@@ -17,6 +18,7 @@
 	IBOutlet UIActivityIndicatorView *activityIndicator;
 	IBOutlet UILabel *resultLabel;
 	IBOutlet UIImageView *resultImage;
+	IBOutlet ADBannerView *bannerView;
 	
 	NSString *currentTitle;
 	NSString *currentArtist;
@@ -28,6 +30,8 @@
 	NSTimer *scrobbleTimer;
 	
 	BOOL shouldExit;
+	
+	BOOL isBannerVisible;
 }
 
 @property (nonatomic, retain) IBOutlet UIImageView *coverArtView;

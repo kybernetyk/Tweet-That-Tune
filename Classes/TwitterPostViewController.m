@@ -36,7 +36,7 @@
     [super viewDidLoad];
 	
 	shouldExit = NO;
-	
+	isBannerVisible = NO;
 	//[activityIndicator startAnimating];
 	[self registerForMusicPlayerNotifications];
 	[self updateMediaPlayerState];
@@ -326,6 +326,38 @@
 	NSLog(@"sending update: %@",ret);
 	//- (NSString *)sendUpdate:(NSString *)status;
 }
+
+#pragma mark -
+#pragma mark iAd delegate
+
+- (BOOL)bannerViewActionShouldBegin:(ADBannerView *)banner willLeaveApplication:(BOOL)willLeave
+{
+	NSLog(@"bannerViewActionShouldBegin:");
+	return YES;	
+}
+
+- (void)bannerViewDidLoadAd:(ADBannerView *)banner
+{
+	NSLog(@"banner did load ...");
+	
+    if (!isBannerVisible)
+    {
+        [UIView beginAnimations:@"animateAdBannerOn" context:NULL];
+		[bannerView setAlpha: 1.0f];
+		
+        [UIView commitAnimations];
+        isBannerVisible = YES;
+    }
+	
+}
+
+- (void)bannerView:(ADBannerView *)banner didFailToReceiveAdWithError:(NSError *)error
+{
+	
+	NSLog(@"failed to get $$$: %@",[error localizedDescription]);
+	
+}
+
 
 
 @end
