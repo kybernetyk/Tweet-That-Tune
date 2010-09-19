@@ -11,17 +11,11 @@
 
 @interface SettingsViewController : UIViewController 
 {
-	IBOutlet UITextField *usernameField;
-	IBOutlet UITextField *passwordField;
 	IBOutlet UISwitch *postOnSongChangeSwitch;
 }
 
-@property (nonatomic, retain) IBOutlet UITextField *usernameField;
-@property (nonatomic, retain) IBOutlet UITextField *passwordField;
 @property (nonatomic, retain) IBOutlet UISwitch *postOnSongChangeSwitch;
 
-- (IBAction) usernameFieldChanged: (id) sender;
-- (IBAction) passwordFieldChanged: (id) sender;
 - (IBAction) postOnSongChangeSwitchChanged: (id) sender;
-
+- (IBAction) logoutTwitter: (id) sender;
 @end

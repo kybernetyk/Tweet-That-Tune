@@ -10,8 +10,6 @@
 #import "Twitter_TuneAppDelegate.h"
 
 @implementation SettingsViewController
-@synthesize usernameField;
-@synthesize passwordField;
 @synthesize postOnSongChangeSwitch;
 
 /*
@@ -32,18 +30,6 @@
 	return YES;
 }
 
-- (IBAction) usernameFieldChanged: (id) sender
-{
-	Twitter_TuneAppDelegate *ad = (Twitter_TuneAppDelegate *)[[UIApplication sharedApplication] delegate];
-	[ad setTwitterUsername: [usernameField text]];
-}
-
-- (IBAction) passwordFieldChanged: (id) sender
-{
-	Twitter_TuneAppDelegate *ad = (Twitter_TuneAppDelegate *)[[UIApplication sharedApplication] delegate];
-	[ad setTwitterPassword: [passwordField text]];
-}
-
 - (IBAction) postOnSongChangeSwitchChanged: (id) sender
 {
 	//NSLog(@"sender %@",sender);
@@ -60,11 +46,6 @@
     [super viewDidLoad];
 
 	Twitter_TuneAppDelegate *ad = (Twitter_TuneAppDelegate *)[[UIApplication sharedApplication] delegate];
-	NSDictionary *creds = [ad twitterCredentials];
-	//NSLog(@"%@",creds);
-	
-	[usernameField setText: [creds objectForKey:@"username"]];
-	[passwordField setText: [creds objectForKey:@"password"]];
 	
 	[postOnSongChangeSwitch setOn: [ad shouldPostOnSongChange] animated: NO];
 	
@@ -98,5 +79,10 @@
     [super dealloc];
 }
 
+
+- (IBAction) logoutTwitter: (id) sender
+{
+	[[NSNotificationCenter defaultCenter] postNotificationName:@"logoutTwitterNow" object: self];
+}
 
 @end

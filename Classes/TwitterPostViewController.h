@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "MGTwitterEngine.h"
 #import <iAd/iAd.h>
+#import "SA_OAuthTwitterEngine.h"
+#import "SA_OAuthTwitterController.h"
 
 @interface TwitterPostViewController : UIViewController 
 {
@@ -25,12 +27,13 @@
 	UIImage *currentCover;
 	NSString *nowPlayingString;
 	
-	MGTwitterEngine *twitterEngine;
+	SA_OAuthTwitterEngine *twitterEngine;
 	
 	NSTimer *scrobbleTimer;
 	
-	BOOL shouldExit;
-	
+	CGRect bannerVisibleFrame;
+	CGRect bannerHiddenFrame;
+	BOOL isBannerLoaded;
 	BOOL isBannerVisible;
 }
 

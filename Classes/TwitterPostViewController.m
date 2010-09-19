@@ -12,6 +12,8 @@
 #import <MediaPlayer/MediaPlayer.h>
 #import "MGTwitterEngine.h"
 
+#import "TwitterPostViewController+Twitter.h"
+#import "TwitterPostViewController+iAd.h"
 
 @implementation TwitterPostViewController
 @synthesize coverArtView;
@@ -35,8 +37,6 @@
 {
     [super viewDidLoad];
 	
-	shouldExit = NO;
-	isBannerVisible = NO;
 	//[activityIndicator startAnimating];
 	[self registerForMusicPlayerNotifications];
 	[self updateMediaPlayerState];
@@ -49,8 +49,14 @@
 		return;
 	}
 	
+	bannerVisibleFrame = [bannerView frame];
+	bannerHiddenFrame = bannerVisibleFrame;
+	bannerHiddenFrame.origin.x -= 330;
 	
-	//[self postSongToTwitter];
+	[bannerView setFrame: bannerHiddenFrame];
+	
+	isBannerLoaded = NO;
+	isBannerVisible = NO;
 }
 
 - (void) updateUI
@@ -80,17 +86,20 @@
 
 - (IBAction) postToTwitter: (id) sender
 {
-	//shouldExit = NO;	
-	[self postSongToTwitter];
+	[self startTwitterShare];
 }
 
 - (IBAction) postToTwitterAndExit: (id) sender
 {
-	shouldExit = YES;
 	[self postToTwitter: sender];
 }
 
 #pragma mark music player stuff
+
+- (void) unregisterFromMusicPlayerNotifications
+{
+	[[NSNotificationCenter defaultCenter] removeObserver: self];
+}
 - (void) registerForMusicPlayerNotifications
 {
 	MPMusicPlayerController *player = [MPMusicPlayerController iPodMusicPlayer];
@@ -107,10 +116,19 @@
                                name:MPMusicPlayerControllerPlaybackStateDidChangeNotification   
                              object:player];  
 	
+	[notificationCenter addObserver: self
+						   selector: @selector(handleTwitterLogout:)
+							   name: @"logoutTwitterNow"
+							 object: nil];
 	
 	
 	
 	[player beginGeneratingPlaybackNotifications];
+}
+
+- (void) handleTwitterLogout: (id) notification
+{
+	[self removeSavedTwitterAuthData];
 }
 
 - (void) handlePostTimer: (NSTimer *) theTimer
@@ -242,6 +260,18 @@
 
 - (void)viewDidUnload 
 {
+	[super viewDidUnload];
+	[coverArtView release], coverArtView = nil;
+	[artistLabel release], artistLabel = nil;
+	[titleLabel release], titleLabel = nil;
+	[activityIndicator release], activityIndicator = nil;
+	[resultLabel release], resultLabel = nil;
+	[resultImage release], resultImage = nil;
+
+	
+	
+	[self unregisterFromMusicPlayerNotifications];
+	
 	MPMusicPlayerController *player = [MPMusicPlayerController iPodMusicPlayer];
 	[player endGeneratingPlaybackNotifications];
 	// Release any retained subviews of the main view.
@@ -251,111 +281,15 @@
 
 - (void)dealloc 
 {
+	[coverArtView release], coverArtView = nil;
+	[artistLabel release], artistLabel = nil;
+	[titleLabel release], titleLabel = nil;
+	[activityIndicator release], activityIndicator = nil;
+	[resultLabel release], resultLabel = nil;
+	[resultImage release], resultImage = nil;
+	
+	[twitterEngine release], twitterEngine = nil;
     [super dealloc];
-}
-
-
-#pragma mark twitter sending stuff
-- (void)requestSucceeded:(NSString *)requestIdentifier
-{
-//	NSLog(@"post succeeded! %@",requestIdentifier);
-	[self setResultText:@"Tweet successfully posted."];
-	[activityIndicator stopAnimating];
-	[self setResultImagetoSuccess: YES];
-	
-//	NSLog(@"%i",shouldExit);
-	if (shouldExit)
-	{
-		exit(0);
-	}
-	shouldExit = NO;
-}
-
-- (void)requestFailed:(NSString *)requestIdentifier withError:(NSError *)error
-{
-	NSLog(@"could not post to twitter! %@ %@",requestIdentifier,error);
-	if ([error code] == 401)
-		[self setResultText:@"Post Request failed!\r\nYour password/username\r\nseems to be incorrect."];
-	else if ([error code] == 1200)
-		[self setResultText:@"Post Request failed!\r\nThis is a temporary error.\r\nPlease try again."];
-	else
-		[self setResultText:[NSString stringWithFormat: @"Post Request failed with code %i.",[error code]]];
-	shouldExit = NO;
-	[activityIndicator stopAnimating];
-	[self setResultImagetoSuccess: NO];
-}
-
-
-- (void) postSongToTwitter
-{
-	Twitter_TuneAppDelegate *ad = (Twitter_TuneAppDelegate *)[[UIApplication sharedApplication] delegate];
-
-	
-	[resultImage setHidden: YES];
-	[activityIndicator startAnimating];
-	[self setResultText:@"Posting to twitter ..."];
-
-	if (![ad isOnline])
-	{
-		[activityIndicator stopAnimating];
-		[self setResultImagetoSuccess: NO];
-		[self setResultText:@"You are offline.\r\nPlease connect to the internet."];
-		return;
-	}
-	
-	NSDictionary *creds = [ad twitterCredentials];
-	//	NSLog(@"%@",creds);
-	
-	
-	
-	NSString *user = [creds objectForKey:@"username"];
-	NSString *pass = [creds objectForKey:@"password"];
-	
-	if (!twitterEngine)
-		twitterEngine = [[MGTwitterEngine alloc] initWithDelegate:self];
-	
-	if (!twitterEngine)
-	{	
-		NSLog(@"could not create twitterEngine!");
-	}
-	[twitterEngine setUsesSecureConnection: NO];
-	[twitterEngine setUsername: user password: pass];
-	[twitterEngine setClientName:@"TTune" version:@"0.1" URL:@"http://www.fluxforge.com" token:@"mutweet"];
-	
-	NSString *ret = [twitterEngine sendUpdate: nowPlayingString];
-	NSLog(@"sending update: %@",ret);
-	//- (NSString *)sendUpdate:(NSString *)status;
-}
-
-#pragma mark -
-#pragma mark iAd delegate
-
-- (BOOL)bannerViewActionShouldBegin:(ADBannerView *)banner willLeaveApplication:(BOOL)willLeave
-{
-	NSLog(@"bannerViewActionShouldBegin:");
-	return YES;	
-}
-
-- (void)bannerViewDidLoadAd:(ADBannerView *)banner
-{
-	NSLog(@"banner did load ...");
-	
-    if (!isBannerVisible)
-    {
-        [UIView beginAnimations:@"animateAdBannerOn" context:NULL];
-		[bannerView setAlpha: 1.0f];
-		
-        [UIView commitAnimations];
-        isBannerVisible = YES;
-    }
-	
-}
-
-- (void)bannerView:(ADBannerView *)banner didFailToReceiveAdWithError:(NSError *)error
-{
-	
-	NSLog(@"failed to get $$$: %@",[error localizedDescription]);
-	
 }
 
 
